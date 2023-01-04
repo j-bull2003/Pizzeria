@@ -1,0 +1,27 @@
+The first step in the code is to read in the input from the user. 
+The input consists of two integers, n and m, on the first line. 
+
+-The integer n represents the dimensions of the city, which is a square grid of size n x n. 
+-The integer m represents the number of pizzerias in the city. The next m lines contain information about each pizzeria, given by three integers x, y, and r. 
+-The integers x and y represent the location of the pizzeria in the city, where (x, y) is the block in the grid that the pizzeria is located at. 
+-The integer r represents the maximum distance that the pizzeria's delivery guy will travel to deliver pizza. 
+
+This information is stored in a list called pizzerias, where each element of the list is a tuple (x, y, r) containing the information about a single pizzeria.
+
+The next step is to initialize a 2D list called delivery_counts, where each element delivery_counts[i][j] represents the number of pizzerias that deliver to block (i, j). 
+This list is initialized to all 0s.
+
+Next, the code iterates through each pizzeria (x, y, r) in pizzerias. For each pizzeria, it initializes a visited list to keep track of which blocks have been visited during the breadth-first search. 
+It also initializes a queue with the initial block (x, y, 0), where 0 represents the distance from the pizzeria's location. 
+Then, the following steps are repeated until the queue is empty:
+
+-Pop the first element (i, j, d) from the queue.
+-If the distance d is greater than the delivery range r, or if the block (i, j) has already been visited, continue to the next iteration of the loop.
+-Mark the block (i, j) as visited.
+-Increment the delivery count for the block (i, j) by 1.
+-For each of the four adjacent blocks (i + dx, j + dy), where dx and dy are either 0 or 1, append the block to the queue if it is within the city bounds (i.e., 0 <= i + dx < n and 0 <= j + dy < n) and has not been visited.
+-After all pizzerias have been processed, the code finds the maximum delivery count by initializing a variable called max_count to 0 and then comparing the delivery count for each block (i, j) to max_count. 
+
+If delivery_counts[i][j] is greater than max_count, max_count is updated to be equal to delivery_counts[i][j].
+
+Lastly, the code prints the maximum delivery count, which is the maximum number of pizzerias that deliver to a single block in the city.
