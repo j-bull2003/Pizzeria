@@ -1,2 +1,2 @@
 # PolyAI
-Python3 
+For this problem, I was given the dimensions of a city represented as an NxN matrix, where each block represents a location in the city. I was also given the location and maximum delivery range of M pizzerias. My task was to find the block with the maximum number of pizzerias delivering to it. To do this, I calculated the delivery range of each pizzeria by determining the blocks that are at most R blocks away from the pizzeria's location using only East/West or North/South movements. I then found the block with the highest number of overlaps from the delivery ranges of all the pizzerias and output the number of pizzerias that deliver to that block using this code.
