@@ -1,5 +1,3 @@
-# PolyAI
-
 ## About the code:
 #### The purpose of this code is to determine the block in a city with the greatest number of pizzerias that can deliver to it. To accomplish this, the code uses a breadth-first search (BFS) algorithm to identify all the blocks within the delivery range of each pizzeria and increments a delivery count for each block. These counts are stored in a 2D list called delivery_counts, where each element delivery_counts[i][j] represents the number of pizzerias that can deliver to block (i, j).
 
